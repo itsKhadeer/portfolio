@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Tilt from 'react-vanilla-tilt';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowUpRight, Calendar } from 'lucide-react';
+import { ArrowUpRight, Calendar, Github } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface ProjectCardProps {
@@ -11,7 +11,10 @@ interface ProjectCardProps {
     title: string;
     description: string;
     tags: string[];
-    link: string;
+    links: {
+      github: string;
+      live?: string;
+    };
     imageUrl: string;
     dataAiHint: string;
     year: number;
@@ -56,12 +59,22 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
             ))}
           </div>
-          <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary mt-auto">
-            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">
-              View Project
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
-            </Link>
-          </Button>
+          <div className="flex items-center gap-4 mt-auto">
+             <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary">
+              <Link href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">
+                <Github className="w-4 h-4" />
+                Code
+              </Link>
+            </Button>
+            {project.links.live && (
+              <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary">
+                <Link href={project.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">
+                  Live
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                </Link>
+              </Button>
+            )}
+          </div>
         </CardFooter>
       </Card>
     </Tilt>
