@@ -58,7 +58,7 @@ const ProjectsSection = () => {
   }, [isMobile]);
 
   return (
-    <AnimatedSection as="section" id="projects" className="py-20 md:py-28 bg-secondary section-bg-gradient overflow-hidden" ref={sectionRef}>
+    <AnimatedSection as="section" id="projects" className="py-28 bg-secondary section-bg-gradient overflow-hidden" ref={sectionRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="section-title">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-16">
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
       </div>
       
       {isMobile ? (
-        <div className="container mb-12 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <div className="flex flex-col items-center gap-12">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
