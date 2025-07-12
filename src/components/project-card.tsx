@@ -22,7 +22,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Tilt
       options={{ glare: true, 'max-glare': 0.1, speed: 400, max: 15 }}
-      className="w-[350px] h-full rounded-2xl"
+      className="w-full max-w-sm h-full rounded-2xl"
       style={{ transformStyle: 'preserve-3d', willChange: 'transform' }}
     >
       <Card 
