@@ -16,6 +16,8 @@ const ProjectsSection = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // The header height is 4rem (64px)
+    const headerHeight = 64; 
     const pin = gsap.fromTo(
       trackRef.current,
       {
@@ -27,7 +29,7 @@ const ProjectsSection = () => {
         duration: 1,
         scrollTrigger: {
           trigger: triggerRef.current,
-          start: 'top top',
+          start: `top ${headerHeight}px`,
           end: () => `+=${trackRef.current!.scrollWidth - triggerRef.current!.offsetWidth}`,
           scrub: 0.5,
           pin: true,
