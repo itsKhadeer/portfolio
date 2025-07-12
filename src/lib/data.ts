@@ -79,6 +79,7 @@ export const experience = [
 export const projects = [
   {
     title: "Attack on Robots ’25",
+    year: 2025,
     description: "Developed a 2D real-time multiplayer strategic resource management game for Pragyan’25, NIT Trichy's technical fest.",
     tags: ["Rust", "Phaser.js", "PostgreSQL", "React.js", "TypeScript", "TailwindCSS"],
     link: "https://github.com/itsKhadeer/Attack-on-Robots-25",
@@ -87,6 +88,7 @@ export const projects = [
   },
   {
     title: "Festember ’24 Mobile App",
+    year: 2024,
     description: "KMM App for Festember’s 50th edition, achieving 1,500+ downloads on Google Play Store. Used Clean MVVM, Ktor, Realm DB, and Koin.",
     tags: ["Kotlin Multiplatform", "Kotlin", "Jetpack Compose"],
     link: "https://play.google.com/store/apps/details?id=dev.festember.festember_24",
@@ -95,6 +97,7 @@ export const projects = [
   },
   {
     title: "Alchemy 2025 Website",
+    year: 2024,
     description: "Official website for the Chemical Engineering Symposium of NIT Trichy, built with GSAP and Framer Motion for animations.",
     tags: ["React.js", "TypeScript", "TailwindCSS", "GSAP", "Framer Motion"],
     link: "https://alchemy.nitt.edu/",
@@ -103,6 +106,7 @@ export const projects = [
   },
   {
     title: "Chase Runner",
+    year: 2024,
     description: "A native Android infinite chase game with gravity, jumps, obstacles, and dynamic scoring.",
     tags: ["Java", "XML", "Android Canvas"],
     link: "https://github.com/itsKhadeer/Chase-Runner",
@@ -111,6 +115,7 @@ export const projects = [
   },
   {
     title: "FESTEMBER'23 App",
+    year: 2023,
     description: "Native Android App for Festember'23 using Kotlin and XML, achieving 1,000+ downloads.",
     tags: ["Kotlin", "XML"],
     link: "https://play.google.com/store/apps/details?id=dev.festember.festember",
@@ -119,6 +124,7 @@ export const projects = [
   },
   {
     title: "Color Wars",
+    year: 2023,
     description: "A 2D chain reaction game built with Kotlin and Jetpack Compose.",
     tags: ["Kotlin", "Jetpack Compose"],
     link: "https://github.com/itsKhadeer/Color-Wars",
