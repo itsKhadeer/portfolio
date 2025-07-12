@@ -8,7 +8,7 @@ const SkillsSection = () => {
   return (
     <SectionWrapper id="skills" title="Technical Skills">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <Card className="lg:col-span-1">
+        <Card className="lg:col-span-1 shadow-sm">
           <CardHeader className="flex flex-row items-center gap-4">
             <div className="p-3 bg-primary/10 rounded-lg text-primary">
               <Code className="w-8 h-8" />
@@ -21,7 +21,7 @@ const SkillsSection = () => {
             ))}
           </CardContent>
         </Card>
-        <Card className="lg:col-span-2">
+        <Card className="lg:col-span-2 shadow-sm">
           <CardHeader className="flex flex-row items-center gap-4">
              <div className="p-3 bg-primary/10 rounded-lg text-primary">
               <Wrench className="w-8 h-8" />

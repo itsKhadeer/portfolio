@@ -6,7 +6,7 @@ const AchievementsSection = () => {
   return (
     <SectionWrapper id="achievements" title="Achievements">
       <div className="max-w-4xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur-sm">
+        <Card className="bg-card/50 backdrop-blur-sm shadow-md">
           <CardContent className="p-8">
             <ul className="space-y-6">
               {achievements.map((achievement, index) => (

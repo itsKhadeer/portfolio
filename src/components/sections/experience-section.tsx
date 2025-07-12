@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { experience } from '@/lib/data';
 import SectionWrapper from '../section-wrapper';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/card';

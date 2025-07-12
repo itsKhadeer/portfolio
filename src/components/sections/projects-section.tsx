@@ -1,10 +1,6 @@
-"use client";
-
-import { useState, useMemo } from 'react';
 import { projects } from '@/lib/data';
 import SectionWrapper from '../section-wrapper';
 import ProjectCard from '../project-card';
-import { Button } from '../ui/button';
 
 const ProjectsSection = () => {
   return (
