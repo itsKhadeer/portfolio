@@ -23,7 +23,7 @@ const ProjectTimelineCard = ({ project, index }: ProjectTimelineCardProps) => {
   const isOdd = index % 2 !== 0;
 
   return (
-    <div className={cn("relative mb-12", isOdd ? "md:pl-[calc(50%+2rem)]" : "md:pr-[calc(50%+2rem)]")}>
+    <div className={cn("relative mb-8", isOdd ? "md:pl-[calc(50%+2rem)]" : "md:pr-[calc(50%+2rem)]")}>
        <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary/20 border-4 border-background shadow-lg left-1/2 -translate-x-1/2">
          <div className="w-full h-full rounded-full bg-primary animate-pulse"></div>
       </div>
@@ -41,24 +41,24 @@ const ProjectTimelineCard = ({ project, index }: ProjectTimelineCardProps) => {
             />
           </div>
         </CardHeader>
-        <CardContent className="p-6">
-          <div className="flex justify-between items-center mb-3">
-            <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
+        <CardContent className="p-4">
+          <div className="flex justify-between items-center mb-2">
+            <CardTitle className="font-headline text-lg">{project.title}</CardTitle>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Calendar className="w-4 h-4" />
               <span>{project.year}</span>
             </div>
           </div>
-          <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+          <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
         </CardContent>
-        <CardFooter className="p-6 pt-0 flex flex-col items-start">
-          <div className="flex flex-wrap gap-2 mb-4">
+        <CardFooter className="p-4 pt-0 flex flex-col items-start">
+          <div className="flex flex-wrap gap-1 mb-3">
             {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">{tag}</Badge>
+              <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
             ))}
           </div>
           <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary mt-auto">
-            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link">
+            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">
               View Project
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-in-out group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
             </Link>
