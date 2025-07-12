@@ -4,7 +4,6 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, Calendar } from 'lucide-react';
 import { Button } from './ui/button';
-import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
   project: {
@@ -20,7 +19,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <Card className="group h-full flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/30 hover:-translate-y-1">
+    <Card className="group h-full w-[350px] flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/30 hover:-translate-y-1">
       <CardHeader className="p-0">
         <div className="aspect-video relative overflow-hidden">
           <Image
@@ -40,7 +39,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <span>{project.year}</span>
           </div>
         </div>
-        <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
+        <p className="text-muted-foreground text-sm mb-3 line-clamp-3">{project.description}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex flex-col items-start mt-auto">
         <div className="flex flex-wrap gap-1 mb-3">

@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 240 10% 99%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 217 91% 60%;
+    --background: 220 20% 98%;
+    --foreground: 220 10% 10%;
+    --card: 220 20% 100%;
+    --card-foreground: 220 10% 10%;
+    --popover: 220 20% 100%;
+    --popover-foreground: 220 10% 10%;
+    --primary: 210 90% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 5% 10%;
-    --muted: 240 5% 90%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 347 90% 61%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 220 10% 95%;
+    --secondary-foreground: 220 5% 20%;
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 5% 45%;
+    --accent: 30 100% 55%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 217 91% 60%;
+    --border: 220 10% 85%;
+    --input: 220 10% 85%;
+    --ring: 210 90% 50%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 220 20% 7%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 220 20% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 220 20% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 217 91% 60%;
+    --primary: 210 90% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 4% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 4% 12%;
-    --muted-foreground: 240 4% 60%;
-    --accent: 347 90% 61%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 40 100% 60%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 63% 40%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 4% 12%;
-    --input: 240 4% 12%;
-    --ring: 217 91% 60%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 210 90% 60%;
   }
 }
 
@@ -63,14 +63,24 @@
 
 @layer utilities {
   .section-bg-gradient {
-    background-image: radial-gradient(at 27% 37%, hsla(217, 91%, 60%, 0.1) 0px, transparent 50%), 
-                      radial-gradient(at 97% 21%, hsla(347, 90%, 61%, 0.1) 0px, transparent 50%), 
-                      radial-gradient(at 75% 86%, hsla(217, 91%, 60%, 0.1) 0px, transparent 50%);
+    background-image: radial-gradient(at 27% 37%, hsla(210, 90%, 50%, 0.1) 0px, transparent 50%), 
+                      radial-gradient(at 97% 21%, hsla(30, 100%, 55%, 0.1) 0px, transparent 50%), 
+                      radial-gradient(at 75% 86%, hsla(210, 90%, 50%, 0.1) 0px, transparent 50%);
   }
   
   .dark .section-bg-gradient {
-     background-image: radial-gradient(at 27% 37%, hsla(217, 91%, 60%, 0.15) 0px, transparent 50%), 
-                      radial-gradient(at 97% 21%, hsla(347, 90%, 61%, 0.15) 0px, transparent 50%), 
-                      radial-gradient(at 75% 86%, hsla(217, 91%, 60%, 0.15) 0px, transparent 50%);
+     background-image: radial-gradient(at 27% 37%, hsla(210, 90%, 60%, 0.15) 0px, transparent 50%), 
+                      radial-gradient(at 97% 21%, hsla(40, 100%, 60%, 0.1) 0px, transparent 50%), 
+                      radial-gradient(at 75% 86%, hsla(210, 90%, 60%, 0.15) 0px, transparent 50%);
   }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  }
+}
+
+@keyframes scroll {
+	to {
+		transform: translate(calc(-50% - 0.5rem));
+	}
 }
