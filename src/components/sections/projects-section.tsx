@@ -68,7 +68,7 @@ const ProjectsSection = () => {
       </div>
       
       {isMobile ? (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mb-12 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-12">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
