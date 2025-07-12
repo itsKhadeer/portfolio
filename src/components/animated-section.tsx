@@ -21,29 +21,30 @@ const AnimatedSection = ({ as: Tag = 'section', className, children, ...props }:
     const title = el.querySelector('.section-title');
     const content = el.querySelector('.section-content');
     
+    // Animate the section container itself
     gsap.fromTo(el, 
-      { autoAlpha: 0, y: 50 },
+      { autoAlpha: 0 },
       {
         autoAlpha: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
+        duration: 0.5,
+        ease: 'power2.inOut',
         scrollTrigger: {
           trigger: el,
-          start: 'top 80%',
+          start: 'top 85%',
           toggleActions: 'play none none none',
         },
       }
     );
 
+    // Animate the title
     if (title) {
       gsap.fromTo(title,
-        { autoAlpha: 0, y: 30 },
+        { autoAlpha: 0, y: 40, skewX: -5 },
         {
           autoAlpha: 1,
           y: 0,
+          skewX: 0,
           duration: 0.8,
-          delay: 0.2,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: el,
@@ -54,19 +55,20 @@ const AnimatedSection = ({ as: Tag = 'section', className, children, ...props }:
       );
     }
     
+    // Animate the content children
     if (content) {
-        const elements = content.children;
+        const elements = Array.from(content.children);
         gsap.fromTo(elements,
           { autoAlpha: 0, y: 30 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.7,
             ease: 'power3.out',
-            stagger: 0.2,
+            stagger: 0.15,
             scrollTrigger: {
-              trigger: el,
-              start: 'top 70%',
+              trigger: content,
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
