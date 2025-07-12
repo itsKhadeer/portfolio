@@ -12,7 +12,7 @@ interface ProjectCardProps {
     description: string;
     tags: string[];
     links: {
-      github: string;
+      github?: string;
       live?: string;
     };
     imageUrl: string;
@@ -60,12 +60,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             ))}
           </div>
           <div className="flex items-center gap-4 mt-auto">
-             <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary">
+             {project.links.github && (
+              <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary">
               <Link href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">
                 <Github className="w-4 h-4" />
                 Code
               </Link>
-            </Button>
+            </Button>)}
             {project.links.live && (
               <Button asChild variant="ghost" className="p-0 h-auto text-primary hover:text-primary">
                 <Link href={project.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group/link text-sm">

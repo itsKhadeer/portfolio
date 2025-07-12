@@ -71,7 +71,7 @@ const ProjectsSection = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <div className="flex flex-col items-center gap-12">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={{ ...project, imageUrl: typeof project.imageUrl === 'object' && 'src' in project.imageUrl ? project.imageUrl.src : project.imageUrl }} />
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ const ProjectsSection = () => {
           <div ref={trackRef} className="absolute top-0 left-0 flex items-center h-full gap-8 px-[calc(50vw-175px)]">
             {projects.map((project, index) => (
               <div key={index} className="project-card-wrapper flex-shrink-0">
-                <ProjectCard project={project} />
+                <ProjectCard project={{ ...project, imageUrl: typeof project.imageUrl === 'object' && 'src' in project.imageUrl ? project.imageUrl.src : project.imageUrl }} />
               </div>
             ))}
           </div>

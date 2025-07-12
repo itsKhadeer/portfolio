@@ -1,5 +1,13 @@
 import { Award, Briefcase, GraduationCap, HeartHandshake, Lightbulb, Rss, Star } from "lucide-react";
-
+import aor from "../lib/AOR_ATTACK_PHASE.jpg"
+import alchemy25 from "../lib/alchemy25.png"
+import festemberapp2024 from "../lib/festember2024.png"
+import festember2023 from "../lib/festember2023.png"
+import color_wars from "../lib/color_wars.png"
+import mario from "../lib/mario.jpg"
+import sangam from "../lib/sangam.png"
+import weather from "../lib/weather.png"
+import icmst2025 from "../lib/icmst2025.png";
 export const personalInfo = {
   name: "Khadeer Ahmed",
   email: "khadeerahmed.dev@gmail.com",
@@ -83,10 +91,22 @@ export const projects = [
     description: "Developed a 2D real-time multiplayer strategic resource management game for Pragyan’25, NIT Trichy's technical fest.",
     tags: ["Rust", "Phaser.js", "PostgreSQL", "React.js", "TypeScript", "TailwindCSS"],
     links: {
-      github: "https://github.com/itsKhadeer/Attack-on-Robots-25",
+      github: "https://github.com/delta/aor-backend",
+      // live: "https://aor.deltaforce.tech/",
     },
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: aor,
     dataAiHint: "robot game",
+  },
+  {
+    title: "ICMST 2025 Website",
+    year: 2025,
+    description: "Developed a responsive website for the International Conference on Membrane Science and Technology (Hosted by NITT) using React, TypeScript, and Tailwind CSS with Swiper JS carousels and Google Maps integration. Containerized with Docker for deployment and achieved 100% SEO score in Lighthouse audits while delivering comprehensive information and registration functionality.",
+    tags: ["React.js", "TypeScript", "TailwindCSS", "Swiper JS", "Docker", "Google Maps"],
+    links: {
+      live: "https://icmst2025.nitt.edu/",
+    },
+    imageUrl: icmst2025,
+    dataAiHint: "conference website",
   },
   {
     title: "Festember ’24 Mobile App",
@@ -97,7 +117,7 @@ export const projects = [
       github: "https://github.com/delta/festember-24",
       live: "https://play.google.com/store/apps/details?id=dev.festember.festember_24",
     },
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: festemberapp2024,
     dataAiHint: "mobile festival",
   },
   {
@@ -106,45 +126,64 @@ export const projects = [
     description: "Official website for the Chemical Engineering Symposium of NIT Trichy, built with GSAP and Framer Motion for animations.",
     tags: ["React.js", "TypeScript", "TailwindCSS", "GSAP", "Framer Motion"],
     links: {
-      github: "https://github.com/itsKhadeer/Alchemy-25",
-      live: "https://alchemy.nitt.edu/",
+      github: "https://github.com/Alchemy-NITT-Webops/alchemy-25-frontend",
+      live: "https://alchemy2025.vercel.app/",
     },
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: alchemy25,
     dataAiHint: "science website",
   },
   {
-    title: "Chase Runner",
+    title: "Color Wars",
     year: 2024,
-    description: "A native Android infinite chase game with gravity, jumps, obstacles, and dynamic scoring.",
-    tags: ["Java", "XML", "Android Canvas"],
+    description: "A 2D chain reaction game built with Kotlin and Jetpack Compose.",
+    tags: ["Kotlin", "Jetpack Compose"],
     links: {
-      github: "https://github.com/itsKhadeer/Chase-Runner",
+      github: "https://github.com/itsKhadeer/color_wars.git",
     },
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "running game",
+    imageUrl: color_wars,
+    dataAiHint: "colorful game",
+  },
+  {
+    title: "Pragyan '25 Ingenium and Sangam Websites",
+    year: 2024,
+    description: "Developed applications for flagship technical hackathons, Ingenium and Sangam, hosted by Pragyan, NIT Trichy’s ISO-certified organization. Built user-friendly home, schedule, sponsors, problem statements, and contact pages using React, TypeScript, Tailwind CSS, and Vite. Implemented custom carousels with Swiper JS and popup features for team results.",
+    tags: ["React.js", "TypeScript", "TailwindCSS", "Vite", "Swiper JS"],
+    links: {
+      live: "https://pragyan.org/sangam-25/",
+    },
+    imageUrl: sangam,
+    dataAiHint: "hackathon website",
   },
   {
     title: "FESTEMBER'23 App",
     year: 2023,
     description: "Native Android App for Festember'23 using Kotlin and XML, achieving 1,000+ downloads.",
     tags: ["Kotlin", "XML"],
-    links: {
-      github: "https://github.com/delta/festember-23",
-      live: "https://play.google.com/store/apps/details?id=dev.festember.festember",
-    },
-    imageUrl: "https://placehold.co/600x400.png",
+    links: {},
+    imageUrl: festember2023,
     dataAiHint: "event app",
   },
   {
-    title: "Color Wars",
+    title: "Chase Runner",
     year: 2023,
-    description: "A 2D chain reaction game built with Kotlin and Jetpack Compose.",
-    tags: ["Kotlin", "Jetpack Compose"],
+    description: "A native Android infinite chase game with gravity, jumps, obstacles, and dynamic scoring.",
+    tags: ["Java", "XML", "Android Canvas"],
     links: {
-      github: "https://github.com/itsKhadeer/Color-Wars",
+      github: "https://github.com/itsKhadeer/chaseRunner2.git",
     },
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "colorful game",
+    imageUrl: mario,
+    dataAiHint: "running game",
+  },
+  {
+    title: "WeatherApp",
+    year: 2023,
+    description: "Native Android weather app built in May–June 2023. Displays current weather using public APIs.",
+    tags: ["Java", "XML", "Android"],
+    links: {
+      github: "https://github.com/itsKhadeer/WeatherApp",
+    },
+    imageUrl: weather,
+    dataAiHint: "weather app",
   },
 ];
 
