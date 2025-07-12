@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { projects } from '@/lib/data';
 import ProjectCard from '../project-card';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,21 +14,21 @@ const ProjectsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    if (isMobile || !trackRef.current || !triggerRef.current) return;
+
     const track = trackRef.current;
     const trigger = triggerRef.current;
-    if (!track || !trigger) return;
-
+    
     const cards = track.querySelectorAll('.project-card-wrapper');
     if (cards.length === 0) return;
     
     const lastCard = cards[cards.length - 1] as HTMLElement;
     if (!lastCard) return;
 
-    // Calculate the total scrollable width
     const scrollWidth = track.scrollWidth - trigger.offsetWidth;
-    // Calculate the end point where the last card is centered
     const endValue = scrollWidth + (trigger.offsetWidth - lastCard.offsetWidth) / 2;
 
     const pin = gsap.fromTo(
@@ -42,7 +43,7 @@ const ProjectsSection = () => {
         scrollTrigger: {
           trigger: trigger,
           start: `center center`,
-          end: () => `+=${track.scrollWidth}`, // Make it long enough
+          end: () => `+=${track.scrollWidth}`,
           scrub: 0.5,
           pin: true,
           invalidateOnRefresh: true,
@@ -53,7 +54,7 @@ const ProjectsSection = () => {
     return () => {
       pin.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <AnimatedSection as="section" id="projects" className="py-20 md:py-28 bg-secondary section-bg-gradient overflow-hidden" ref={sectionRef}>
@@ -64,15 +65,26 @@ const ProjectsSection = () => {
           </h2>
         </div>
       </div>
-      <div ref={triggerRef} className="relative h-[28rem] w-full">
-        <div ref={trackRef} className="absolute top-0 left-0 flex items-center h-full gap-8 px-[calc(50vw-175px)]">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card-wrapper flex-shrink-0">
-              <ProjectCard project={project} />
-            </div>
-          ))}
+      
+      {isMobile ? (
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-12">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div ref={triggerRef} className="relative h-[28rem] w-full">
+          <div ref={trackRef} className="absolute top-0 left-0 flex items-center h-full gap-8 px-[calc(50vw-175px)]">
+            {projects.map((project, index) => (
+              <div key={index} className="project-card-wrapper flex-shrink-0">
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </AnimatedSection>
   );
 };
@@ -87,7 +99,6 @@ const AnimatedSection = ({ as: Tag = 'section', className, children, ...props }:
 
     const title = el.querySelector('.section-title');
     
-    // Only animate title if it exists
     if (title) {
       gsap.fromTo(title,
         { autoAlpha: 0, y: 30 },
