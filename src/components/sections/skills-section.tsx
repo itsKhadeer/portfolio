@@ -17,7 +17,7 @@ const SkillsSection = () => {
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
             {skills.languages.map((skill, index) => (
-              <Badge key={index} variant="default" className="text-sm py-1 px-3 bg-primary/10 text-primary-foreground hover:bg-primary/20 font-normal">{skill}</Badge>
+              <Badge key={index} variant="default" className="text-sm py-1 px-3 bg-primary/10 text-primary hover:bg-primary/20 font-normal">{skill}</Badge>
             ))}
           </CardContent>
         </Card>
