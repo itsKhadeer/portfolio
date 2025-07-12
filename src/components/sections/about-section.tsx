@@ -14,7 +14,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {education.map((edu, index) => (
           <Card key={index} className="flex flex-col text-center items-center p-6">
-            <CardHeader>
+            <CardHeader className="items-center">
               <div className="bg-primary/10 p-3 rounded-full mb-4">
                  <GraduationCap className="w-8 h-8 text-primary" />
               </div>
