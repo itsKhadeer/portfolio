@@ -3,14 +3,14 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import Code from './portfolio.png';
 export const metadata: Metadata = {
   title: 'Khadeer Ahmed | Portfolio',
   description: 'Personal portfolio of Khadeer Ahmed, a full-stack and mobile developer.',
   openGraph: {
     title: 'Khadeer Ahmed | Portfolio',
     description: 'Personal portfolio of Khadeer Ahmed, a full-stack and mobile developer.',
-    url: 'https://khadeer-portfolio.dev',
+    url: 'https://khadeerahmed.vercel.app',
     siteName: 'Khadeer Ahmed Portfolio',
     images: [
       {
@@ -37,6 +37,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
+        <link rel='icon' href={Code.src}/>
       </head>
       <body className="font-body antialiased">
         <ThemeProvider
