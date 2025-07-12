@@ -10,12 +10,12 @@ const ExperienceSection = () => {
       <div className="relative max-w-2xl mx-auto">
         <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
         {experience.map((exp, index) => (
-          <div key={index} className="relative mb-12">
-            <div className="absolute left-1/2 top-4 h-4 w-4 rounded-full bg-primary border-4 border-background -translate-x-1/2"></div>
-            <Card className="md:w-11/12 mx-auto">
+          <div key={index} className="relative mb-12 group">
+            <div className="absolute left-1/2 top-4 h-4 w-4 rounded-full bg-primary border-4 border-background -translate-x-1/2 transition-all duration-300 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-primary/40"></div>
+            <Card className="md:w-11/12 mx-auto transition-all duration-300 group-hover:shadow-xl group-hover:border-primary/30">
               <CardHeader className="flex flex-row items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Briefcase className="w-6 h-6 text-primary" />
+                <div className="p-3 bg-primary/10 rounded-lg text-primary">
+                  <Briefcase className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="font-headline text-xl">{exp.title}</CardTitle>
