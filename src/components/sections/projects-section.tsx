@@ -16,21 +16,31 @@ const ProjectsSection = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // The header height is 4rem (64px)
-    const headerHeight = 64; 
+    const headerHeight = 64; // Assuming header height is 64px
+    const track = trackRef.current;
+    const trigger = triggerRef.current;
+    if (!track || !trigger) return;
+
+    const cards = track.querySelectorAll('.project-card-wrapper');
+    const lastCard = cards[cards.length - 1] as HTMLElement;
+    if (!lastCard) return;
+
+    const endValue = track.scrollWidth - trigger.offsetWidth;
+    const lastCardOffset = lastCard.offsetLeft + (lastCard.offsetWidth / 2) - (trigger.offsetWidth / 2);
+    
     const pin = gsap.fromTo(
-      trackRef.current,
+      track,
       {
         translateX: 0,
       },
       {
-        translateX: () => `-${trackRef.current!.scrollWidth - triggerRef.current!.offsetWidth}px`,
+        translateX: () => `-${lastCardOffset}px`,
         ease: 'none',
         duration: 1,
         scrollTrigger: {
-          trigger: triggerRef.current,
-          start: `top ${headerHeight}px`,
-          end: () => `+=${trackRef.current!.scrollWidth - triggerRef.current!.offsetWidth}`,
+          trigger: trigger,
+          start: `top ${headerHeight * 2}px`,
+          end: () => `+=${track.scrollWidth}`, // Make it long enough
           scrub: 0.5,
           pin: true,
           invalidateOnRefresh: true,
@@ -53,9 +63,9 @@ const ProjectsSection = () => {
         </div>
       </div>
       <div ref={triggerRef} className="relative h-[28rem] overflow-hidden">
-        <div ref={trackRef} className="absolute top-0 left-0 flex items-center h-full gap-8 px-8">
+        <div ref={trackRef} className="absolute top-0 left-0 flex items-center h-full gap-8 px-[calc(50vw-175px)]">
           {projects.map((project, index) => (
-            <div key={index} className="flex-shrink-0">
+            <div key={index} className="project-card-wrapper flex-shrink-0">
               <ProjectCard project={project} />
             </div>
           ))}
