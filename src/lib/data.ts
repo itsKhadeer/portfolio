@@ -39,26 +39,15 @@ export const education = [
 ];
 
 export const skills = {
-  languages: ["Python", "Kotlin", "Java", "C++", "TypeScript", "Go", "Rust"],
+  languages: ["Python", "Kotlin", "Java", "C++", "TypeScript"],
   tools: [
     "Jetpack Compose",
     "React.js",
     "Tailwind CSS",
-    "FastAPI",
     "Android Studio",
     "Docker",
     "SQL",
     "Git",
-    "AWS",
-    "Phaser.js",
-    "PostgreSQL",
-    "Diesel ORM",
-    "Ktor",
-    "Realm DB",
-    "Koin",
-    "Framer Motion",
-    "GSAP",
-    "Vite",
   ],
 };
 
