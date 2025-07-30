@@ -169,7 +169,7 @@ export const projects = [
     description: "Native Android weather app built in May–June 2023. Displays current weather using public APIs.",
     tags: ["Java", "XML", "Android"],
     links: {
-      github: "https://github.com/itsKhadeer/WeatherApp",
+      github: "https://github.com/itsKhadeer/deltaOS2.git",
     },
     imageUrl: weather,
     dataAiHint: "weather app",
