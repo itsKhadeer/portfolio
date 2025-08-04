@@ -14,7 +14,7 @@ export const personalInfo = {
   phone: "+91 95001 40779",
   linkedin: "https://www.linkedin.com/in/khadeer-ahmed/",
   github: "https://github.com/itsKhadeer",
-  resumeUrl: "/resume.pdf", // Placeholder
+  resumeUrl: "https://drive.google.com/file/d/18ptYrEvqOorHEQGjQILGH8XKWz8L-Fyp/view?usp=drive_link", // Placeholder
 };
 
 export const education = [
