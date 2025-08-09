@@ -83,17 +83,6 @@ export const experience = [
 
 export const projects = [
   {
-    title: "VulnaiBot, Code Vulnerability Detection Chatbot",
-    year: 2024,
-    description: "Fine-tuned LLaMA 3.2-3B model on CVEFixes dataset. Built a Next.js app with a FastAPI backend and Google OAuth for users to scan GitHub repos for vulnerabilities.",
-    tags: ["LLM", "LLaMA", "LoRA", "Hugging Face", "Next.js", "FastAPI", "Python", "GGUF"],
-    links: {
-      github: "https://github.com/itsKhadeer", // Placeholder
-    },
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "ai chatbot security",
-  },
-  {
     title: "Attack on Robots ’25",
     year: 2025,
     description: "Developed a 2D real-time multiplayer strategic resource management game for Pragyan’25, NIT Trichy's technical fest, engaging 350+ participants.",
