@@ -110,8 +110,7 @@ export const projects = [
     description: "KMM App for Festember’s 50th edition, achieving 1,500+ downloads. Used Clean MVVM, Ktor, Realm DB, and Koin.",
     tags: ["Kotlin Multiplatform", "Jetpack Compose", "Ktor", "Realm DB"],
     links: {
-      github: "https://github.com/delta/festember-24",
-      live: "https://play.google.com/store/apps/details?id=dev.festember.festember_24",
+      live: "https://play.google.com/store/apps/details?id=com.festember.app24",
     },
     imageUrl: festemberapp2024,
     dataAiHint: "mobile festival",
